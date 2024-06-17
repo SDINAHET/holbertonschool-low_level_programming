@@ -6,7 +6,6 @@
  */
 int main(void)
 {
-puts("\"Programming is like building a multilingual puzzle");  /* Affiche une chaine de caracteres */
-return (0);  /* Retourne 0 pour indiquer que le programme s'est termine  avec succes */
+	puts("\"Programming is like building a multilingual puzzle");
+	return (0);
 }
-
