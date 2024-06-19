@@ -7,7 +7,7 @@
 * betty style doc for function main goes there
 */
 int main(void)
-int variable_with_$ = 10;
+
 {
 char c;
 
@@ -15,12 +15,12 @@ for (c = '0' ; c <= '9'; c++)
 {
 	putchar(c);
 	{
-	putchar(',');
-	putchar(' ');
+	putchar(', ');
 	}
 }
 
-putchar('$' && '\n');
+putchar('$');
+putcharÃ('\n');
 
 return (0);
 }
