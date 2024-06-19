@@ -22,7 +22,7 @@ int main(void)
 	}
 	else if (n == 0)
 	{
-		fprinf("%d is zero\n", n);
+		fprint("%d is zero\n", n);
 	}
 	else
 	{
