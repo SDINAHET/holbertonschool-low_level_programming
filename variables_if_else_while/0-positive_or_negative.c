@@ -1,8 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
-
-/* betty style doc for function main goes there */
+/**
+* main tache0 projet10 Positive anything is better than negative nothing
+* Return:0 succes
+* betty style doc for function main goes there
+*/
 int main(void)
 {
 	int n;
@@ -15,15 +18,15 @@ int main(void)
 	/* if the number is less than 0: is negative n<0 */
 	if (n > 0)
 	{
-		printf("%d is positive\n", n);
+		fprint("%d is positive\n", n);
 	}
 	else if (n == 0)
 	{
-		printf("%d is zero\n", n);
+		fprinf("%d is zero\n", n);
 	}
 	else
 	{
-		printf("%d is negative\n", n);
+		fprint("%d is negative\n", n);
 	}
 	return (0);
 }
