@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
@@ -18,15 +19,15 @@ int main(void)
 	/* if the number is less than 0: is negative n<0 */
 	if (n > 0)
 	{
-		fprint("%d is positive\n", n);
+		printf("%d is positive\n", n);
 	}
 	else if (n == 0)
 	{
-		fprint("%d is zero\n", n);
+		printf("%d is zero\n", n);
 	}
 	else
 	{
-		fprint("%d is negative\n", n);
+		printf("%d is negative\n", n);
 	}
 	return (0);
 }
