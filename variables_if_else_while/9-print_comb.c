@@ -21,7 +21,7 @@ for (i = 0 ; i <= 9; i++)
 	}
 }
 
-putchar('$'), putchar('\n');
+putchar('$');
 
 return (0);
 }
