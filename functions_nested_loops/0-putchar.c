@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - Entry point of the program
  * Description: Prints _putchar followed by a new line (1  char a la fois)
