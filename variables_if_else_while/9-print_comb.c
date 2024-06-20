@@ -9,11 +9,12 @@
 int main(void)
 
 {
-char c;
+int i;
 
-for (c = '0' ; c <= '9'; c++)
+for (i = 0 ; i < 10; i++)
 {
-	putchar(c);
+	putchar(i + '0');
+	if (i < 10)
 	{
 	putchar(',');
 	putchar(' ');
@@ -21,7 +22,6 @@ for (c = '0' ; c <= '9'; c++)
 }
 
 putchar('$');
-putcharÃ('\n');
 
 return (0);
 }
