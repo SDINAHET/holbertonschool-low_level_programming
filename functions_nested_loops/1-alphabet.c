@@ -1,11 +1,11 @@
 #include "1-main.h"
+#include <unistd.h>
 /**
 * main - check the code
-* Description print alphabet
+* Description print alphabet with for
+* print_alphabet - Prints the alphabet in lowercase followed by a new line.
 * Return: Always 0.
 */
-
-/* alphabet void avec function for- function alphabet */
 
 void print_alphabet(void)
 {
@@ -15,5 +15,5 @@ void print_alphabet(void)
 	{
 		_putchar(c);
 	}
-_putchar('\n');
+	_putchar('\n');
 }
