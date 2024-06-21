@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
+#incude <main.h>
 /**
  * main - Entry point of the program
  * Description: Prints _putchar followed by a new line (1  char a la fois)
