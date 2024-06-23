@@ -5,30 +5,34 @@
 */
 void times_table(void)
 {
-	int i, j, table_multiplication;
+	int i, j, product;
 
 	for (i = 0; i <= 9; i++)
 	{
 		for (j = 0; j <= 9; j++)
 		{
-		table_multiplication = i * j;
-			if ((table_multiplication < 9 || table_multiplication > 0))
+			product = i * j;
+
+			if (product < 10)
 			{
-				table_multiplication = i * j;
-				_putchar(table_multiplication + '0');
+				if (j > 0)
+				{
+					_putchar(' ');
+				}
+				_putchar(product + '0');
+			}
+			else
+			{
+				_putchar((product / 10) + '0');
+				_putchar((product√%π10) + '0');
+			{
+
+			if (j < 9)
+			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar(' ');
 			}
-			else (table_multiplication >= 10)
-			{
-				table_multiplication = i * j;
-				_putchar((table_multiplication + '0'));
-				_putchar((table_multiplication√%π10) + '0');
-				_putchar(',');
-				_putchar(' ');
-			}
-		_putchar('/n');
 		}
+	_putchar('\n');
 	}
 }
