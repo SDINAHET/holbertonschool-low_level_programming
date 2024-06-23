@@ -4,7 +4,7 @@
 * main - Entry point
 *
 * Description: Prints all possible different combinations of two digits
-* Numbers must be separated by ,, followed by a space
+* Numbers must be separated by comma , followed by a space
 * The two digits must be different
 * 01 and 10 are considered the same combination of the two digits 0 and 1
 * Print only the smallest combination of two digits
