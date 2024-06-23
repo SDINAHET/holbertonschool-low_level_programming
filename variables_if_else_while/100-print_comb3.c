@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+* Main - entry point of the program
+* Description - print with putchar possible combinaisons of two digits
+* unless the same combinaison 01 = 10
+* Return : 0 succes
+*/
 int main(void)
 {
 	int i, j;
