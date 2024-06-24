@@ -8,28 +8,16 @@
 */
 void more_numbers(void)
 {
-	int i;
-	int j;
-	int first_digit;
-	int second_digit;
+	int i, j;
 
-	for (j = 0 ; j <= 10; j++)
+	for (i = 0; i < 10; i++) /* 10 lignes*/
 	{
-		for (i = 0; i <= 14; i++)
+		for (j = 0; j <= 14; j++) /*chiffre 0 a 14*/
 		{
-			if (i > 9) /*nombre au dessus de 10 entre 10 et 14*/
-			{
-				first_digit = i / 10; /*appel 1er chiffre*/
-				second_digit = i % 10; /*appel 2eme chiffre*/
-				_putchar (first_digit + '0'); /*print first digit*/
-				_putchar (second_digit + '0'); /*print secon digit*/
-			}
-			else
-			{
-				_putchar (i + '0');
-			}
+			if (j > 9) /*si chiffre superieur a 9 = 10 a 14*/
+				_putchar ((j / 10) + '0'); /* j/10 */
+			_putchar ((j % 10) + '0'); /* else j%10 pour j<=9*/
 		}
 		_putchar ('\n');
 	}
-	_putchar ('\n'); /*print newline after code*/
 }
