@@ -15,14 +15,18 @@ int main(int i)
 
 {
 	for (i > 0 ; i <= 100; i++)
-		_putchar (' ');
-		{
-		for (i % 3 == 0)
-			printf("Fizz");
-		for (i % 5 == 0)
-			printf("Buzz");
-		for ((i % 3 == 0 || (i % 5 == 0))
-			printf("FizzBuzz");
-		}
-	_putchar (\n);
+	{
+	if (i % 3 == 0 && i % 5 == 0)
+		printf("FizzBuzz");
+	else if (i % 3 == 0)
+		printf("Fizz");
+	else if (i % 5 == 0)
+		printf("Buzz");
+	else
+		printf("%d", i);
+if (i != 100)
+	printf(" ");
+	}
+	printf("\n");
+	return (0);
 }
