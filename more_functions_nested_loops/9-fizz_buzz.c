@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
 * main - point of entry
@@ -7,14 +7,16 @@
 * si divisible par 3 = Fizz
 * si divisible par 5 = Buzz
 * si divisible par 3 et 5 = FizzBuzz
+* @i numbers 1 --> 100
 *
 * Return: 0
 */
-
-int main(int i)
-
+int main(void)
 {
-	for (i > 0 ; i <= 100; i++)
+
+	int i;
+
+	for (i = 1 ; i <= 100; i++)
 	{
 	if (i % 3 == 0 && i % 5 == 0)
 		printf("FizzBuzz");
@@ -24,8 +26,8 @@ int main(int i)
 		printf("Buzz");
 	else
 		printf("%d", i);
-if (i != 100)
-	printf(" ");
+	if (i != 100)
+		printf(" ");
 	}
 	printf("\n");
 	return (0);
