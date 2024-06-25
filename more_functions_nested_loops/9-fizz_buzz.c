@@ -11,17 +11,17 @@
 * Return: 0
 */
 
-int main (int i)
+int main(int i)
 
 {
 	for (i > 0 ; i <= 100; i++)
 		_putchar (' ');
 		{
-		for (i % 3 ==0)
+		for (i % 3 == 0)
 			printf("Fizz");
-		for (i % 5 ==0)
+		for (i % 5 == 0)
 			printf("Buzz");
-		for ((i % 3 ==0 || (i % 5 ==0))
+		for ((i % 3 == 0 || (i % 5 == 0))
 			printf("FizzBuzz");
 		}
 	_putchar (\n);
