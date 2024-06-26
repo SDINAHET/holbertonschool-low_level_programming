@@ -8,12 +8,13 @@
 */
 int _strlen(char *s)
 {
-int length = 0;
+	int length = 0;
 
-while (s[length] != '\0')
-{
-        length++;
-}
-
-	return length;
+/* Iterate over the string until the null terminator is reached*/
+	while (s[length] != '\0')
+ /* The null terminator '\0' marks the end of the string */
+	{
+		length++;
+	}
+	return (length);
 }
