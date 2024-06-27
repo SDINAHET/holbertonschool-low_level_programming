@@ -10,7 +10,7 @@ void puts_half(char *str)
 	int start;
 	int i;
 
-    /* Calculate the length of the string manually*/
+	/* Calculate the length of the string manually*/
 	while (str[length] != '\0')
 	{
 	length++;
@@ -26,7 +26,7 @@ void puts_half(char *str)
 	start = (length + 1) / 2;
 	}
 
-    /* Print the second half of the string*/
+ 	/* Print the second half of the string*/
 	for (i = start; i < length; i++)
 	{
 	_putchar (str[i]);
