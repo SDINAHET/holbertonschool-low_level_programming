@@ -12,10 +12,11 @@ char *_strcpy(char *dest, char *src)
 {
 int i;
 
+	/*copy each character from src to dest*/
 	for (i = 0; src[i] != '\0'; i++)
 	{
 		dest[i] = src[i];
 	}
-	dest[i] = '\0';  /*Don't forget to add the null terminator*/
-	return (dest);
+	dest[i] = '\0';  /*add null terminator to dest*/
+	return (dest); /*retourn the pointer to dest*/
 }
