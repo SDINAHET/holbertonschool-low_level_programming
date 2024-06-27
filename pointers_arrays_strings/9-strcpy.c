@@ -17,6 +17,6 @@ int i;
 	{
 		dest[i] = src[i];
 	}
-	dest[i] = '\0';  /*add null terminator to dest*/
+	/*dest[i] = '\0';  add null terminator to dest*/
 	return (dest); /*retourn the pointer to dest*/
 }
