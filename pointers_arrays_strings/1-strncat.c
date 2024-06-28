@@ -4,13 +4,13 @@
 * _strncat - Concatenates two strings.
 * @dest: The destination string.
 * @src: The source string.
+* @n: The maximum number of bytes to be used from src
 *
 * Return: A pointer to the resulting string dest.
 */
 char *_strncat(char *dest, char *src, int n)
 {
 	char *dest_start = dest;
-	int n;
 
 /*Move the pointer to the end of dest string*/
 	while (*dest)
@@ -19,15 +19,15 @@ char *_strncat(char *dest, char *src, int n)
 	}
 
 /*Copy src string to dest string*/
-	while (*src)
+	while (n > 0 && *src)
 	{
-	*dest = *src + 1;
+	*dest = *src;
 	dest++;
 	src++;
+	n--;
 	}
 
 /*Add terminating null byte*/
 	*dest = '\0';
-
 	return (dest_start);
 }
