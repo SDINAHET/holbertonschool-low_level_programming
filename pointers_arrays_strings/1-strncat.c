@@ -24,7 +24,7 @@ char *_strncat(char *dest, char *src, int n)
 	*dest = *src;
 	dest++;
 	src++;
-	n--;
+	n--; /* n--  equivalent n = n - 1 */
 	}
 
 /*Add terminating null byte*/
