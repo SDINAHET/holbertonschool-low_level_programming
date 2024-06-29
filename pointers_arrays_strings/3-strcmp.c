@@ -29,8 +29,8 @@ int _strcmp(char *s1, char *s2)
 /* jusqu'à ce que l'une des conditions suivantes soit remplie :*/
 
 
-/* { fonction si utilisation strcmp dans la librairie string.h*/
-/*	return (strcmp(s1, s2));*/
+/* { fonction si utilisation strcmp dans la librairie string*/
+/*	return (+strcmp(s1, s2));*/
 /*}*/
 /*s1 = "Hello"*/
 /*s2 = "World!"*/
