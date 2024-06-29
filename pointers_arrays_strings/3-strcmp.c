@@ -28,10 +28,6 @@ int _strcmp(char *s1, char *s2)
 /* assure que les deux chaînes sont comparées caractère par caractère*/
 /* jusqu'à ce que l'une des conditions suivantes soit remplie :*/
 
-
-/* { fonction si utilisation strcmp dans la librairie string*/
-/*	return (+strcmp(s1, s2));*/
-/*}*/
 /*s1 = "Hello"*/
 /*s2 = "World!"*/
 /*Iteration 1*/
