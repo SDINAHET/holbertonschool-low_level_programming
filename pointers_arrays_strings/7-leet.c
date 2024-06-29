@@ -11,15 +11,16 @@ char *leet(char *str)
 	char *ptr = str;
 	char letters[] = "aAeEoOtTlL";
 	char leet[] = "4433007711";
+	int i;
 
 	while (*ptr != '\0')
 	{
-		for (int i = 0; i < 10; i++)
+		for (i = 0; i < 10; i++)
 		{
 			if (*ptr == letters[i])
 			{
 				*ptr = leet[i];
-				break; // No need to check the rest of the letters
+				break; /*No need to check the rest of the letters*/
 			}
 		}
 		ptr++;
