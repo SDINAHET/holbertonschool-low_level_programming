@@ -1,10 +1,9 @@
 #include "main.h"
-/*#include <string.h>   Inclure le fichier d'en-tete pour strcmp */
 
 /**
 * _strcmp - Compares two strings.
-* @s1: The first string.
-* @s2: The second string.
+* @s1: The first string H.
+* @s2: The second string W.
 *
 * Return: An integer less than, equal to, or greater than zero if s1 is found,
 * respectively, to be less than, to match, or be greater than s2.
@@ -30,7 +29,7 @@ int _strcmp(char *s1, char *s2)
 /* jusqu'à ce que l'une des conditions suivantes soit remplie :*/
 
 
-/* { fonction si utilisation strcmp dans la librairie string*/
+/* { fonction si utilisation strcmp dans la librairie string.h*/
 /*	return (strcmp(s1, s2));*/
 /*}*/
 /*s1 = "Hello"*/
