@@ -14,15 +14,18 @@ unsigned int _strspn(char *s, char *accept)
 	char *a;
 
 	while (*s)
-/*This loop continues as long as the current character pointed to by s is not the null terminator ('\0').*/
+/*This loop continues as long as the current character pointed to by s is -*/
+/*-not the null terminator ('\0').*/
 	{
-		for (a = accept; *a; a++) /*This loop iterates through each character in the accept string.*/
+		for (a = accept; *a; a++)
+/*This loop iterates through each character in the accept string.*/
 		{
 			if (*s == *a)
 			{
 				count++;
 				break;
-/*This checks if the current character in s matches the current character in accept*/
+/*This checks if the current character in s matches the current*/
+/* character in accept*/
 /*If a match is found, it increments the count and breaks out of*/
 /* the for loop to continue checking the next character in s.*/
 			}
@@ -31,8 +34,9 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			break;
 /*After the for loop, this checks if *a is the null terminator ('\0').*/
-/*If *a is '\0', it means that no match was found in accept for the current character in s.*/
-/*In this case, the while loop breaks because the initial segment/*
+/*If *a is '\0', it means that no match was found in accept for the current*/
+/*character in s.*/
+/*In this case, the while loop breaks because the initial segment*/
 /*of s that consists only of characters from accept has ended.*/
 		}
 		s++;
