@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stlib.h>
 
 /**
 * is_digit - Check if a string consists only of digits
@@ -11,10 +12,10 @@ int is_digit(char *str)
 	while (*str)
 	{
 		if (*str < '0' || *str > '9')
-			return 0;
+			return (0);
 		str++;
 	}
-	return 1;
+	return (1);
 }
 
 /**
@@ -32,7 +33,7 @@ int i, sum = 0;
 if (argc == 1)
 {
 	printf("0\n");
-return 0;
+return (0);
 }
 
 	/* Loop through each argument starting from argv[1]*/
@@ -42,7 +43,7 @@ return 0;
 		if (!is_digit(argv[i]))
 		{
 			printf("Error\n");
-		return 1;  // Return 1 to indicate error
+		return (1);  /* Return 1 to indicate error*/
 		}
 
 	/* Convert the argument from string to integer and add to sum*/
@@ -52,5 +53,5 @@ return 0;
 /* Print the result of the addition*/
 printf("%d\n", sum);
 
-return 0;  /* Return 0 to indicate success*/
+return (0);  /* Return 0 to indicate success*/
 }
