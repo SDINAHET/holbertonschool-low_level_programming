@@ -18,9 +18,4 @@ long sum1 =0, sum2 = 0;
 
 	printf("%ld, %ld\n", sum1, sum2);
 
-	/*fprintf(sum1);
-	_putchar (',');
-	_putchar (' ');
-	fprintf(sum2);
-	_putchar ('\n');*/
 }
