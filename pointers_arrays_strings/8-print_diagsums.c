@@ -8,7 +8,7 @@
 void print_diagsums(int *a, int size)
 {
 int i;
-long sum1 =0, sum2 = 0;
+int sum1 = 0, sum2 = 0;
 
 	for (i = 0; i < size; i++)
 	{
@@ -16,6 +16,6 @@ long sum1 =0, sum2 = 0;
 	sum2 += a[i * size + (size - 1 - i)]; /* Sum of the secondary diagonal */
 	}
 
-	printf("%ld, %ld\n", sum1, sum2);
+	printf("%d, %d\n", sum1, sum2);
 
 }
