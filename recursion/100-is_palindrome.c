@@ -15,7 +15,7 @@ int _strlen(char *s)
 		len++;
 	}
 	return (len);
-	}
+}
 
 /**
 * is_palindrome_recursive - helper function to check if a string
