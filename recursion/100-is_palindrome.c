@@ -34,7 +34,7 @@ int is_palindrome_recursive(char *s, int start, int end)
 
 /* If characters at the start and end are different, it's not a palindrome */
 	if (s[start] != s[end])
-	return (0);
+		return (0);
 
 /* Move towards the middle */
 	return (is_palindrome_recursive(s, start + 1, end - 1));
