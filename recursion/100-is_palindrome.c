@@ -29,11 +29,11 @@ int _strlen(char *s)
 int is_palindrome_recursive(char *s, int start, int end)
 {
 /* Base case: if we've checked all the characters */
-if (start >= end)
-	return (1);
+	if (start >= end)
+		return (1);
 
 /* If characters at the start and end are different, it's not a palindrome */
-if (s[start] != s[end])
+	if (s[start] != s[end])
 	return (0);
 
 /* Move towards the middle */
@@ -56,5 +56,5 @@ int is_palindrome(char *s)
 	if (len == 0)
 		return (1);
 
-return (is_palindrome_recursive(s, 0, len - 1));
+	return (is_palindrome_recursive(s, 0, len - 1));
 }
