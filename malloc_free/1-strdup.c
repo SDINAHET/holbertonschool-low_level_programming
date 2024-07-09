@@ -16,15 +16,19 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL); /*Returns NULL if str = NULL*/
 
+	/* Calculate the length of the string */
 	for (length = 0; str[length] != '\0'; length++)
+		/* ;  Empty loop body to count the characters in str */
 
+	/* Allocate memory for the duplicate string (+1 for the null terminator) */
 	dup = malloc((length + 1) * sizeof(char));
 	if (dup == NULL)
-		return (NULL); /* It returns NULL if insufficient memory was available*/
+		return (NULL); /* Returns NULL if insufficient memory was available */
 
+	/* Copy the string */
 	for (i = 0; i < length; i++)
 		dup[i] = str[i];
-	dup[length] = '\0';
+	dup[length] = '\0'; /* Null-terminate the duplicated string */
 
 	return (dup);
 }
