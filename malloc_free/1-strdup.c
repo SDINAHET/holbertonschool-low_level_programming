@@ -17,7 +17,7 @@ char *_strdup(char *str)
 		return (NULL); /*Returns NULL if str = NULL*/
 
 	/* Calculate the length of the string */
-	for (length = 0; str[length] != '\0'; length++)
+	for (length = 0; str[length] != '\0'; length++);
 		/* ;  Empty loop body to count the characters in str */
 
 	/* Allocate memory for the duplicate string (+1 for the null terminator) */
