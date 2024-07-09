@@ -29,3 +29,11 @@ void free_grid(int **grid, int height)
 /* pour le tableau de pointeurs lui-même (grid) est libere.*/
 /* Cela complete la liberation de la grille bidimensionnelle entiere.*/
 }
+
+/*La fonction free_grid libere la memoire alloue pour une*/
+/* grille bidimensionnelle d'entiers. Elle commence par verifier*/
+/* si les parametres sont valides, puis elle libere chaque ligne*/
+/* de la grille et enfin, elle libere le tableau de pointeurs.*/
+/* Cette fonction est importante pour eviter les fuites de memoire*/
+/* en s'assurant que toute la memoire dynamique allouee pour la grille*/
+/* est correctement libere lorsqu'elle n'est plus necessaire.*/
