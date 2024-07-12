@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-/*#include <string.h>*/
 #include "dog.h"
 
 /**
@@ -20,25 +19,58 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (dog == NULL)
 		return (NULL);
 
-	/* Allocate memory for the owner strings */
-	dog->name = malloc(strlen(name) + 1);
+	/* Allocate memory and copy name */
+	dog->name = _strdup(name) + 1;
 	if (dog->name == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
 
-	/* Allocate memory for the owner strings */
-	dog->owner = malloc(strlen(owner) + 1);
-	if (new_owner == NULL)
+	/* Allocate memory and copy owner */
+	dog->owner = _strdup(owner) + 1;
+	if (dog->owner == NULL)
 	{
-		free(new_name);
+		free(dog->name);
 		free(dog);
 		return (NULL);
 	}
 
-	printf("Name: (nil)\n");
-	printf("Owner: (nil)\n");
+	dog->age = age;
 
 	return (dog);
+}
+
+/**
+* _strlen - Calculate the length of a string
+* @str: Pointer to the string
+*
+* Return: Length of the string
+*/
+unsigned int _strlen(char *str)
+{
+	unsigned int len = 0;
+
+	while (str[len])
+		len++;
+	return (len);
+}
+
+/**
+* _strdup - Duplicate a string in memory
+* @str: Pointer to the string to duplicate
+*
+* Return: Pointer to the duplicated string, or NULL if malloc fails
+*/
+char *_strdup(char *str)
+{
+	unsigned int len = _strlen(str);
+	char *dup = malloc(len);
+	unsigned int i;
+
+	if (dup == NULL)
+		return (NULL);
+	for (i = 0; i <= len; i++)
+		dup[i] = str[i];
+	return (dup);
 }
