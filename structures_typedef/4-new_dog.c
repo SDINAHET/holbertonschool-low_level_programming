@@ -20,7 +20,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	/* Allocate memory and copy name */
-	dog->name = _strdup(name) + 1;
+	dog->name = _strdup(name);
 	if (dog->name == NULL)
 	{
 		free(dog);
@@ -28,7 +28,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	/* Allocate memory and copy owner */
-	dog->owner = _strdup(owner) + 1;
+	dog->owner = _strdup(owner);
 	if (dog->owner == NULL)
 	{
 		free(dog->name);
@@ -65,7 +65,7 @@ unsigned int _strlen(char *str)
 char *_strdup(char *str)
 {
 	unsigned int len = _strlen(str);
-	char *dup = malloc(len);
+	char *dup = malloc(len + 1); /*+1 pour /0*/
 	unsigned int i;
 
 	if (dup == NULL)
