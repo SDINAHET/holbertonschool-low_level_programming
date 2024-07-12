@@ -1,6 +1,7 @@
 #ifndef DOG_H
 #define DOG_H
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
 * struct dog - a new type describing a dog
@@ -24,7 +25,7 @@ void print_dog(struct dog *d);
 typedef struct dog dog_t;
 /*4_Prototype of function that creates a new dog*/
 dog_t *new_dog(char *name, float age, char *owner);
-/*5_prototype*/
+/*5_Prototype of function that frees dogs*/
 void free_dog(dog_t *d);
 
 #endif /* DOG_H */
