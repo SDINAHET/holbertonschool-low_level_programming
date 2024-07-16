@@ -9,7 +9,7 @@
 */
 void print_name(char *name, void (*f)(char *))
 {
-	if (name == NULL || f == NULL)
+	if (name == NULL && f == NULL)
 	{
 		return; /*exit the function if name of function pointer is NULL*/
 	}
