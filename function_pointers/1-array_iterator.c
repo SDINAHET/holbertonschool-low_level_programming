@@ -17,7 +17,24 @@ size_t i;
 	{
 		for (i = 0; i < size; i++)
 		{
-		action(array[i]);
+		action(array[i]); /*run function*/
 		}
 	}
 }
+
+/*0 in decimal is 0x0 in hexadecimal.*/
+/*98 in decimal is 0x62 in hexadecimal.*/
+/*402 in decimal is 0x192 in hexadecimal.*/
+/*1024 in decimal is 0x400 in hexadecimal.*/
+/*4096 in decimal is 0x1000 in hexadecimal.*/
+
+/*0*/
+/*98*/
+/*402*/
+/*1024*/
+/*4096*/
+/*0x0*/
+/*0x62*/
+/*0x192*/
+/*0x400*/
+/*0x1000+*/
