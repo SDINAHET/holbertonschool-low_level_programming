@@ -24,6 +24,7 @@ size_t i;
 
 /*0 in decimal is 0x0 in hexadecimal.*/
 /*98 in decimal is 0x62 in hexadecimal.*/
+/* 98/16 reste2 quotient 6 6/16 reste6 quotient 0*/
 /*402 in decimal is 0x192 in hexadecimal.*/
 /*1024 in decimal is 0x400 in hexadecimal.*/
 /*4096 in decimal is 0x1000 in hexadecimal.*/
@@ -38,3 +39,5 @@ size_t i;
 /*0x192*/
 /*0x400*/
 /*0x1000+*/
+
+/*https://www.rapidtables.com/convert/number/decimal-to-hex.html?x=98*/
