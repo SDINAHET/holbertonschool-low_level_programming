@@ -17,14 +17,14 @@ size_t i;
 	{
 		for (i = 0; i < size; i++)
 		{
-		action(array[i]); /*run function*/
+			action(array[i]); /*run function*/
 		}
 	}
 }
 
 /*0 in decimal is 0x0 in hexadecimal.*/
 /*98 in decimal is 0x62 in hexadecimal.*/
-/* 98/16 reste2 quotient 6 6/16 reste6 quotient 0*/
+/* 98/16 reste2 quotient 6 & 6/16 reste6 quotient 0 on obtient 62*/
 /*402 in decimal is 0x192 in hexadecimal.*/
 /*1024 in decimal is 0x400 in hexadecimal.*/
 /*4096 in decimal is 0x1000 in hexadecimal.*/
