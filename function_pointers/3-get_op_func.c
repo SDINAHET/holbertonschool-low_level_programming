@@ -1,4 +1,24 @@
-#include "function_pointers.h"
+#include "3-calc.h"
+
+/**
+*get_op_func :
+*
+*@s is the operator passed as argument to the program
+*int
+*
+*/
+
+int (*get_op_func(char *s))(int, int);
+
+char s
+int i,j;
+
+
+
+
+
+
+
 
 	op_t ops[] = {
 		{"+", op_add},
