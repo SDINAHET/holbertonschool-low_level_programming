@@ -11,8 +11,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
-	int (*operation)(int, int);
+int num1, num2, result;
+int (*operation)(int, int);
 
 	if (argc != 4) /*1--*/
 	{

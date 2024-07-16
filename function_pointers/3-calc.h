@@ -17,8 +17,6 @@ typedef struct op
 	int (*f)(int a, int b);
 } op_t;
 
-int _putchar(char c)
-
 /*addition*/
 int op_add(int a, int b);
 
