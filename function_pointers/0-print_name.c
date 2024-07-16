@@ -9,8 +9,19 @@
 */
 void print_name(char *name, void (*f)(char *))
 {
-	if (name != NULL)
+	if (name == NULL || f == NULL)
 	{
-		f(name); /*run function*/
+		return; /*exit the function if name of function pointer is NULL*/
 	}
+
+	f(name); /*run function*/
+
 }
+
+/*void print_name(char *name, void (*f)(char *))*/
+/*{*/
+/*	if (name != NULL)*/
+/*	{*/
+/*		f(name);  run function*/
+/*	}*/
+/*}*/
