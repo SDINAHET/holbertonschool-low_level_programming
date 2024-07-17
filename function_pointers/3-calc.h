@@ -1,7 +1,6 @@
 #ifndef CALC_H
 #define CALC_H
 
-/*#include "function_pointers.h"*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -33,6 +32,6 @@ int op_div(int a, int b);
 int op_mod(int a, int b);
 
 /*3-get_op_func.c*/
-int (*get_op_func(char *s))(int, int)
+int (*get_op_func(char *s))(int, int);
 
 #endif /* CALC_H */

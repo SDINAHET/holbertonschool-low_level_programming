@@ -7,10 +7,10 @@
 *@s: is the operator passed as argument
 *
 *Return: pointer to the function that corresponds to the operator given
-*as a parameter
+*             as a parameter
 */
 int (*get_op_func(char *s))(int, int)
-{
+
 	/*initialize an Array of Structs*/
 	op_t ops[] = {
 		{"+", op_add},
@@ -38,9 +38,23 @@ int (*get_op_func(char *s))(int, int)
 	/* dans la structure ops[i}.op correspond a la chaine de caractere s*/
 	/* s[1] == '\0'  s[1] est le deuxieme caractere de la*/
 	/* chaine de caractere 's' */
-		i++;
+	i++;
 	/*incrementation de i*/
 	}
 	return (NULL);
 	/*retourne NULL si aucun operateur ne correspond*/
 }
+
+/*Prototype: int (*get_op_func(char *s))(int, int);*/
+/*This file should contain the function that selects the correct*/
+/* function to perform the operation asked by the user.*/
+/*You’re not allowed to declare any other function.*/
+/*where s is the operator passed as argument to the program*/
+/*This function returns a pointer to the function that corresponds*/
+/* to the operator given as a parameter. Example: get_op_func("+") should*/
+/* return a pointer to the function op_add*/
+/*You are not allowed to use more than one if statement in your code*/
+/*You are not allowed to use more than one while loop in your code*/
+/*If s does not match any of the 5 expected operators*/
+/* (+, -, *, /, %), return NULL*/
+/*You are only allowed to declare these two variables in this function:*/
