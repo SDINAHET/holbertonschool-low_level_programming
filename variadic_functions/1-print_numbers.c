@@ -22,10 +22,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_start(args, n);
 	/*initialisation de va_list*/
 	/*va_start initialise args pour acceder aux arguments apres n.*/
+
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(args, int));
-		if (separator != NULL && i != n - 1)
+		if (separator != NULL) /*&& i != n - 1)*/
 			printf("%s", separator);
 	}
 	/*La boucle itere n fois pour recuperer chaque argument*/
