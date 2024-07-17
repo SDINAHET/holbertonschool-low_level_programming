@@ -20,7 +20,15 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	va_args(args, char *);
+	while
+	{
+		while
+		{
+			 va_arg(args, char *);
+		}
+	}
 
 	va_end(args);
+
+	printf("\n");
 }
