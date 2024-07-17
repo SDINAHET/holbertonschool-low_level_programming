@@ -20,11 +20,11 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while
+	while i
 	{
-		while
+		while j
 		{
-			 va_arg(args, char *);
+			str = va_arg(args, char *);
 		}
 	}
 
