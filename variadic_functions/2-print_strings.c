@@ -27,7 +27,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (str == NULL)
 			printf("(nil)");
 		else
-			printf("%s", va_arg(args, char *));  /*ou printf("%s", str);*/
+			printf("%s", str); /*imprime bien Jay, Django avec pointeur*/
+			/*printf("%s", (va_arg(args, char *)));*/
+			/*impression Django, UHAWAVAUATSH8L%I ne marche pas*/
 
 		if (separator != NULL && i != n - 1)
 			printf("%s", separator);
