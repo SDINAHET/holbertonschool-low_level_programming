@@ -26,7 +26,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(args, int));
-		if (separator != NULL) /*&& i != n - 1)*/
+		if (separator != NULL && i != n - 1)
 			printf("%s", separator);
 	}
 	/*La boucle itere n fois pour recuperer chaque argument*/
@@ -35,6 +35,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	/* de type int de la liste args.*/
 	/*Si separator n'est pas NULL et que l'index actuel*/
 	/* n'est pas le dernier, imprimez le separator.*/
+	/*importance de i != n - 1 sinon on imprime 0, 98, -1024, 402,*/
+	/* avec la virgule*/
 
 	va_end(args); /*nettoyage va_end termine l'utilisation de va_list*/
 	printf("\n"); /*impression du saut de ligne*/
