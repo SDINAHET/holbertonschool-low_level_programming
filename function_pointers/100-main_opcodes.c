@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		fprintf(stderr, "Error\n");
-		return (1);
+		exit (1);
 	}
 
 	num_bytes = atoi(argv[1]);
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	if (num_bytes < 0)
 	{
 		fprintf(stderr, "Error\n");
-		return (2);
+		exit (2);
 	}
 
 	print_opcodes(num_bytes);
