@@ -62,7 +62,7 @@ void print_opcodes(int bytes)
 	{
 		if (i > 0)
 			printf(" ");
-		printf("0x%x", ptr[i]);  /*avant %02x puis 0x%x\n puis 0x%x */
+		printf("%02x", ptr[i]);  /*avant %02x puis 0x%x\n puis 0x%x */
 	}
 	printf("\n");
 }
