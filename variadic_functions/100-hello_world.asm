@@ -17,9 +17,9 @@ section .data
 	hello_len equ $ - hello		; Calculate the length of the string
 
 section .text
-	global _start			; Define the entry point for the program
+	global main			; Define main the entry point for the program
 
-_start:
+main:
 	; Write "Hello, World" to stdout
 	mov rax, 1			; Syscall number for sys_write (1)
 	mov rdi, 1			; File descriptor 1 is stdout
