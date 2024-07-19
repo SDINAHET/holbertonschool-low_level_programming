@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		fprintf(stderr, "Error\n");
-		exit (1);
+		exit(1);
 	}
 
 	num_bytes = atoi(argv[1]);
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	if (num_bytes < 0)
 	{
 		fprintf(stderr, "Error\n");
-		exit (2);
+		exit(2);
 	}
 
 	print_opcodes(num_bytes);
@@ -54,7 +54,8 @@ int main(int argc, char **argv)
 */
 void print_opcodes(int bytes)
 {
-	unsigned char *ptr = (unsigned char *)print_opcodes; /* Function pointer to address */
+	unsigned char *ptr = (unsigned char *)print_opcodes;
+	/* Function pointer to address */
 	int i;
 
 	for (i = 0; i < bytes; i++)
