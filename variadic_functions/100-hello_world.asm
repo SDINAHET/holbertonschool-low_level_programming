@@ -13,21 +13,21 @@
 ;   ./hello for gcc and ./100-hello_world for ld
 
 section .data
-	hello db 'Hello, World', 0x0A  ; Define the string with a newline character
-	hello_len equ $ - hello        ; Calculate the length of the string
+	hello db 'Hello, World', 0x0A	; Define the string with a newline character
+	hello_len equ $ - hello		; Calculate the length of the string
 
 section .text
-	global _start                  ; Define the entry point for the program
+	global _start			; Define the entry point for the program
 
 _start:
 	; Write "Hello, World" to stdout
-	mov rax, 1          ; Syscall number for sys_write (1)
-	mov rdi, 1          ; File descriptor 1 is stdout
-	mov rsi, hello      ; Address of the string to output
-	mov rdx, hello_len  ; Length of the string
-	syscall             ; Invoke the syscall to write the string
+	mov rax, 1			; Syscall number for sys_write (1)
+	mov rdi, 1			; File descriptor 1 is stdout
+	mov rsi, hello			; Address of the string to output
+	mov rdx, hello_len		; Length of the string
+	syscall				; Invoke the syscall to write the string
 
 	; Exit the program
-	mov rax, 60         ; Syscall number for sys_exit (60)
-	xor rdi, rdi        ; Exit code 0 (no error)
-	syscall             ; Invoke the syscall to exit
+	mov rax, 60			; Syscall number for sys_exit (60)
+	xor rdi, rdi			; Exit code 0 (no error)
+	syscall				; Invoke the syscall to exit
