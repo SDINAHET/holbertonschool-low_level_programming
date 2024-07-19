@@ -1,3 +1,6 @@
+; 100-hello_world.asm
+; This program prints "Hello, World" to the standard output and exits.
+
 section .data
 	hello db 'Hello, World', 0x0A  ; The string to print with a newline character at the end
 	hello_len equ $ - hello        ; The length of the string
