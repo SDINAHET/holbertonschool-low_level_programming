@@ -8,7 +8,7 @@ void print_all(const char * const format, ...);
 
 typedef structure printall
 {
-	char *letter;
+	char *cara;
 	void(*func)(va_list_arg)
 } printall_t;
 

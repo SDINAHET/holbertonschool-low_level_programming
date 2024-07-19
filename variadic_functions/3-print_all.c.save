@@ -14,9 +14,7 @@ void print_all(const char * const format, ...)
 /*... indique qu'il s'agit d'une fonction variadique,*/
 /* acceptant un nombre variable d'arguments.*/
 {
-	/*va_list args;*/
-	unsigned int i, j;
-	char *vir = '';
+	char "coma u ";
 
 	printall_t prt[] = {
 		{'c', print_char},
@@ -25,22 +23,23 @@ void print_all(const char * const format, ...)
 		{'s', print_string}
 	};
 
+	va_list args;
+	unsigned int i = 0, j = 0;
+	char *str, *separator = "";
+
 	va_start(args, format);
 
-	while (format && (*(format + i)))
+	while (format && (*(format + i) != *
 	{
 		j = 0;
-
-		while (j < 4 && (*(format + i) != *(prt[j].cara)))
+		while (separator[j] != '\0')
 			j++;
-		if (j < 4)
-		{
-			printf(s", vir);
-			prt[j].func(args);
-			vir= ", ";
-		}
+
+		separator = ", ";
 		i++;
 	}
-	printf("\n");
+
 	va_end(args);
+
+	printf("\n");
 }
