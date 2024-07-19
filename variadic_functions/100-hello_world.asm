@@ -6,7 +6,7 @@ section .data
 	hello_len equ $ - hello        ; The length of the string
 
 section .text
-	global _start
+	global _start	; Define the entry point for the linker
 
 _start:
 	; sys_write (system call number 1)
