@@ -16,8 +16,8 @@ void print_all(const char * const format, ...);
 /*3-definir une fonction en fonction du format*/
 typedef struct printall
 {
-	char *cara;
-	void (*func)(va_list arg);
+	char specifier;
+	void (*func)(va_list *args, int *first);
 } printall_t;
 
 #endif /* VARIADIC_FUNCTIONS_H */
