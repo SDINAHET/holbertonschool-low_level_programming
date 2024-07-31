@@ -9,9 +9,9 @@
  * Description: This function prints each element of a singly linked list
  * of type `list_t`. Each node is printed with its string length and the
  * string itself. If a node's string is NULL, it prints "(nil)" with length 0.
- *  
+ *
  * Return: the number of nodes
- * 
+ *
  * Note: This function traverses the entire list, so it is an O(n) operation,
  * where n is the number of nodes in the list.
  */
