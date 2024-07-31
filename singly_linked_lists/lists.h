@@ -30,7 +30,7 @@ typedef struct list_s /*important cette structure des singly linky lists*/
 } list_t;
 
 /* Function prototypes */
-/*int _putchar(char c);*/
+int _putchar(char c);
 
 /*0*/
 size_t print_list(const list_t *h);

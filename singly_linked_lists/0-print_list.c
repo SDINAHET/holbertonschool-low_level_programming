@@ -1,7 +1,9 @@
 #include "lists.h"
 #include <stdio.h>
 #include "lists.h"
-#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>  /* Pour la fonction write*/
+
 /**
  * print_list - prints all the elements of a list_t list
  * @h: pointer to the head of the list_t list
@@ -72,14 +74,3 @@ void _print_number(unsigned int n)
     _putchar((n % 10) + '0');
 }
 
-/**
-* _putchar - writes the character c to stdout
-* @c: The character to print
-*
-* Return: On success 1.
-* On error, -1 is returned, and errno is set appropriately.
-*/
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
