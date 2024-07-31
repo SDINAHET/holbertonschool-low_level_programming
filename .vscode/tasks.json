@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C Program",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/gcc.exe",
+            "args": [
+                "-o",
+                "myprogram",
+                "main.c"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compiles the C program using GCC from MSYS2"
+        },
+        {
+            "label": "Run C Program",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/bash.exe",
+            "args": [
+                "-c",
+                "./myprogram"
+            ],
+            "dependsOn": "Build C Program",
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "detail": "Runs the compiled C program using MSYS2 Bash"
+        }
+    ]
+}

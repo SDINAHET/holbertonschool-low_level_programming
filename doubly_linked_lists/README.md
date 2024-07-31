@@ -1,0 +1,1 @@
+This is the text of README of project 25
