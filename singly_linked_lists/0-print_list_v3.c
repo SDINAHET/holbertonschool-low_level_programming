@@ -37,7 +37,7 @@ size_t print_list(const list_t *h)
         }
         else
         {
-            print_number(h->len);  /* Print length of the string */
+            _print_number(h->len);  /* Print length of the string */
             _putchar(' ');
 
             /* Print the string itself using while loop */
@@ -70,4 +70,16 @@ void _print_number(unsigned int n)
         _print_number(n / 10);
     }
     _putchar((n % 10) + '0');
+}
+
+/**
+* _putchar - writes the character c to stdout
+* @c: The character to print
+*
+* Return: On success 1.
+* On error, -1 is returned, and errno is set appropriately.
+*/
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
