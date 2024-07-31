@@ -35,6 +35,7 @@ int _putchar(char c);
 /*0*/
 size_t print_list(const list_t *h);
 void _print_number(unsigned int n);
+void _print_string(const char *str);
 
 /*1*/
 size_t list_len(const list_t *h);

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>  /* Pour la fonction write*/
+#include <stddef.h> /* Pour la fonction size_t*/
 
 /**
  * print_list - prints all the elements of a list_t list
@@ -19,7 +20,7 @@
 size_t print_list(const list_t *h)
 {
 	size_t count = 0; /* Initialize a counter of the number of nodes */
-	int i;  /* Index for string traversal */
+	/*int i = 0;   Index for string traversal */
 
 	while (h != NULL)
 	{
@@ -42,23 +43,15 @@ size_t print_list(const list_t *h)
 			_print_number(h->len);  /* Print length of the string */
 			_putchar(']');
 			_putchar(' ');
-
-			/* Print the string itself using while loop */
-			i = 0;
-			while (h->str[i] != '\0')
-			{
-				_putchar(h->str[i]);
-				i++;
-			}
-			_putchar('\n');
-		}
+            _print_string(h->str);/*print the string*/
+            _putchar('\n');
+        }
 
 		count++;
 		h = h->next;
 	}
 	return (count);
 }
-
 /**
  * _print_number - prints an integer as digits
  * @n: the integer to print
@@ -71,4 +64,17 @@ void _print_number(unsigned int n)
 		_print_number(n / 10);
 	_putchar((n % 10) + '0');
 }
-
+/**
+ * _print_string - prints a string character by character
+ * @str: the string to print
+ *
+ * Description: This function prints each character of a string using
+ * _putchar.
+ */
+void _print_string(const char *str)
+{
+    while (*str)
+    {
+        _putchar(*str++);
+    }
+}

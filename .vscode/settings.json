@@ -55,15 +55,15 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false,  // add comma with msys2 extension manpage
-
-  
-  //Configuration du terminal intégré
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "terminal.integrated.profiles.windows": {
     "MSYS2": {
       "path": "C:/msys64/msys2.exe",
-      "args": ["--login", "-i"]
+      "args": [
+        "--login",
+        "-i"
+      ]
     }
   },
-  "terminal.integrated.defaultProfile.windows": "MSYS2" 
+  "terminal.integrated.defaultProfile.windows": "MSYS2"
 }
