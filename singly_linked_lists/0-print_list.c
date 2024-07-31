@@ -11,12 +11,15 @@
  *  
  * Return: the number of nodes
  * 
- *  Note: This function traverses the entire list, so it is a O(n) operation,
+ * Note: This function traverses the entire list, so it is a O(n) operation,
  * where n is the number of nodes in the list.
  */
 size_t print_list(const list_t *h)
 {
      size_t count = 0;  /* Initialize a counter to keep track of the number of nodes */
+     int i = 0; /*index for string traversal*/
+
+     count = 0; /*intialize the node counter to 0*/
 
     /* Traverse the list until the end is reached */
     while (h != NULL)
@@ -50,8 +53,19 @@ size_t print_list(const list_t *h)
             _putchar(' ');
 
             /* Print the string itself */
-            for (int i = 0; h->str[i] != '\0'; i++)
+            /*for (i = 0; h->str[i] != '\0'; i++)*/
+            /*    _putchar(h->str[i]);*/
+
+            /*_putchar('\n');*/
+        /*}*/
+
+        /* Print the string itself using while loop */
+            /*i = 0; initialize index for the string*/
+            while (h->str[i] != '\0')
+            {
                 _putchar(h->str[i]);
+                i++;
+            }
 
             _putchar('\n');
         }
@@ -60,3 +74,6 @@ size_t print_list(const list_t *h)
         count++;  /* Increment the node counter */
         h = h->next;  /* Update the pointer to point to the next node */
     }
+
+    return (count);
+}

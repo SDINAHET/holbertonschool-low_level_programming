@@ -17,6 +17,7 @@ list_t *add_node(list_t **head, const char *str)
 {
     list_t *new_node;   /* Pointer to the new node */
     char *str_dup;      /* Pointer to the duplicated string */
+    
 
     /* Allocate memory for the new node */
     new_node = malloc(sizeof(list_t));
