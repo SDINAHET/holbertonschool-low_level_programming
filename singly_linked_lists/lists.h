@@ -11,7 +11,7 @@
  * @str: string - (malloc'ed string)
  * @len: length of the string
  * @next: points to the next node
- * 
+ *
  * Lorsqu'une chaîne est allouée avec malloc, vous obtenez
  * un pointeur vers le début de cette mémoire allouée,
  * que vous pouvez utiliser comme une chaîne de caractères.
@@ -24,9 +24,9 @@
  */
 typedef struct list_s /*important cette structure des singly linky lists*/
 {
-    char *str;              /* Pointeur vers une chaîne de caractères */
-    unsigned int len;      /* Longueur de la chaîne de caractères */
-    struct list_s *next;   /* Pointeur vers le prochain nœud de la liste */
+	char *str;              /* Pointeur vers une chaîne de caractères */
+	unsigned int len;      /* Longueur de la chaîne de caractères */
+	struct list_s *next;   /* Pointeur vers le prochain nœud de la liste */
 } list_t;
 
 /* Function prototypes */
@@ -43,7 +43,8 @@ size_t list_len(const list_t *h);
 list_t *add_node(list_t **head, const char *str);
 
 /*3*/
-list_t *add_node_end(list_t **head, const char *str);
+list_t *add_node_end(list_t **head, const char *str);/*add_node*/
+list_t *create_node(const char *str); /*create node*/
 
 /*4*/
 void free_list(list_t *head);

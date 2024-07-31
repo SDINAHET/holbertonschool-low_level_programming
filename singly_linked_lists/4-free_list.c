@@ -12,14 +12,14 @@
  */
 void free_list(list_t *head)
 {
-    list_t *temp;  /* Temporary pointer to hold the current node */
+	list_t *temp;  /* Temporary pointer to hold the current node */
 
-    /* Traverse the list and free each node */
-    while (head != NULL)
-    {
-        temp = head->next;  /* Save the next node */
-        free(head->str);    /* Free the string in the current node */
-        free(head);         /* Free the current node itself */
-        head = temp;        /* Move to the next node */
-    }
+	/* Traverse the list and free each node */
+	while (head != NULL)
+	{
+		temp = head->next;  /* Save the next node */
+		free(head->str);    /* Free the string in the current node */
+		free(head);         /* Free the current node itself */
+		head = temp;        /* Move to the next node */
+	}
 }

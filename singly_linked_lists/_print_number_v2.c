@@ -9,9 +9,9 @@
  */
 void _print_number(unsigned int n)
 {
-    if (n / 10 != 0)
-    {
-        _print_number(n / 10);
-    }
-    _putchar((n % 10) + '0');
+	if (n / 10 != 0)
+	{
+		_print_number(n / 10);
+	}
+	_putchar((n % 10) + '0');
 }

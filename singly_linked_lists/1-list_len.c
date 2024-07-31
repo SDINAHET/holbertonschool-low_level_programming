@@ -11,13 +11,13 @@
  */
 size_t list_len(const list_t *h)
 {
-    size_t count = 0;  /* Initialize the count to 0 */
+	size_t count = 0;  /* Initialize the count to 0 */
 
-    while (h != NULL)  /* Traverse the list until the end */
-    {
-        count++;       /* Increment count for each node */
-        h = h->next;  /* Move to the next node */
-    }
+	while (h != NULL)  /* Traverse the list until the end */
+	{
+		count++;       /* Increment count for each node */
+		h = h->next;  /* Move to the next node */
+	}
 
-    return count;     /* Return the total number of nodes */
+	return (count);     /* Return the total number of nodes */
 }
