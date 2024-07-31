@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stdio.h>
-#include "lists.h"
 #include <stdlib.h>
 #include <unistd.h>  /* Pour la fonction write*/
 
@@ -19,44 +18,45 @@
  */
 size_t print_list(const list_t *h)
 {
-    size_t count = 0;  /* Initialize a counter to keep track of the number of nodes */
-    int i;  /* Index for string traversal */
+	size_t count = 0; /* Initialize a counter of the number of nodes */
+	int i;  /* Index for string traversal */
 
-    while (h != NULL)
-    {
-        if (h->str == NULL)
-        {
-            _putchar('[');
-            _putchar('0');
-            _putchar(']');
-            _putchar(' ');
-            _putchar('(');
-            _putchar('n');
-            _putchar('i');
-            _putchar('l');
-            _putchar(')');
-            _putchar('\n');
-        }
-        else
-        {
-            _print_number(h->len);  /* Print length of the string */
-            _putchar(' ');
+	while (h != NULL)
+	{
+		if (h->str == NULL)
+		{
+			_putchar('[');
+			_putchar('0');
+			_putchar(']');
+			_putchar(' ');
+			_putchar('(');
+			_putchar('n');
+			_putchar('i');
+			_putchar('l');
+			_putchar(')');
+			_putchar('\n');
+		}
+		else
+		{
+			_putchar('[');
+			_print_number(h->len);  /* Print length of the string */
+			_putchar(']');
+			_putchar(' ');
 
-            /* Print the string itself using while loop */
-            i = 0;
-            while (h->str[i] != '\0')
-            {
-                _putchar(h->str[i]);
-                i++;
-            }
-            _putchar('\n');
-        }
+			/* Print the string itself using while loop */
+			i = 0;
+			while (h->str[i] != '\0')
+			{
+				_putchar(h->str[i]);
+				i++;
+			}
+			_putchar('\n');
+		}
 
-        count++;
-        h = h->next;
-    }
-
-    return (count);
+		count++;
+		h = h->next;
+	}
+	return (count);
 }
 
 /**
@@ -67,10 +67,8 @@ size_t print_list(const list_t *h)
  */
 void _print_number(unsigned int n)
 {
-    if (n / 10 != 0)
-    {
-        _print_number(n / 10);
-    }
-    _putchar((n % 10) + '0');
+	if (n / 10 != 0)
+		_print_number(n / 10);
+	_putchar((n % 10) + '0');
 }
 
