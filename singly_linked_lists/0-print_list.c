@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
-
+#include "lists.h"
+#include <stdio.h>
 /**
  * print_list - prints all the elements of a list_t list
  * @h: pointer to the head of the list_t list
@@ -11,25 +12,18 @@
  *  
  * Return: the number of nodes
  * 
- * Note: This function traverses the entire list, so it is a O(n) operation,
+ * Note: This function traverses the entire list, so it is an O(n) operation,
  * where n is the number of nodes in the list.
  */
 size_t print_list(const list_t *h)
 {
-     size_t count = 0;  /* Initialize a counter to keep track of the number of nodes */
-     int i = 0; /*index for string traversal*/
+    size_t count = 0;  /* Initialize a counter to keep track of the number of nodes */
+    int i;  /* Index for string traversal */
 
-     count = 0; /*intialize the node counter to 0*/
-
-    /* Traverse the list until the end is reached */
     while (h != NULL)
     {
-        /* Check if the string of the current node is NULL */
         if (h->str == NULL)
         {
-            /* Print a placeholder in english for NULL strings */
-            /*espace réservé" ou "texte de substitution" nil*/
-            /*printf("[0] (nil)\n");*/
             _putchar('[');
             _putchar('0');
             _putchar(']');
@@ -43,37 +37,49 @@ size_t print_list(const list_t *h)
         }
         else
         {
-            /* Print the length of the string and the string itself */
-            /*printf("[%u] %s\n", h->len, h->str);*/
-            /*h est un pointeur vers un noeud de la liste chaînée (list_t)*/
-            /*h->len est la longeur de la chaîne stock dans le noeud (format %u)*/
-            /*h->str est un pointeur vers la chaine de caractère stocké dans le noeud (format %s) */
-            /* Print the length of the string */
-            print_number(h->len);   /* Convert length to characters and print */
+            _print_number(h->len);  /* Print length of the string */
             _putchar(' ');
 
-            /* Print the string itself */
-            /*for (i = 0; h->str[i] != '\0'; i++)*/
-            /*    _putchar(h->str[i]);*/
-
-            /*_putchar('\n');*/
-        /*}*/
-
-        /* Print the string itself using while loop */
-            /*i = 0; initialize index for the string*/
+            /* Print the string itself using while loop */
+            i = 0;
             while (h->str[i] != '\0')
             {
                 _putchar(h->str[i]);
                 i++;
             }
-
             _putchar('\n');
         }
 
-        /* Move to the next node in the list */
-        count++;  /* Increment the node counter */
-        h = h->next;  /* Update the pointer to point to the next node */
+        count++;
+        h = h->next;
     }
 
     return (count);
+}
+
+/**
+ * _print_number - prints an integer as digits
+ * @n: the integer to print
+ *
+ * Description: This function prints an integer digit by digit.
+ */
+void _print_number(unsigned int n)
+{
+    if (n / 10 != 0)
+    {
+        _print_number(n / 10);
+    }
+    _putchar((n % 10) + '0');
+}
+
+/**
+* _putchar - writes the character c to stdout
+* @c: The character to print
+*
+* Return: On success 1.
+* On error, -1 is returned, and errno is set appropriately.
+*/
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
