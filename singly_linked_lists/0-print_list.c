@@ -20,7 +20,7 @@
 size_t print_list(const list_t *h)
 {
 	size_t count = 0; /* Initialize a counter of the number of nodes */
-	int i;  /* Index for string traversal */
+	/*int i;   Index for string traversal */
 
 	while (h != NULL)
 	{
@@ -64,4 +64,17 @@ void _print_number(unsigned int n)
 	if (n / 10 != 0)
 		_print_number(n / 10);
 	_putchar((n % 10) + '0');
+}
+ /**
+ * _print_string - prints a string character by character
+ * @str: the string to print
+ *
+ * Description: This function prints each character of a string using
+ * _putchar.
+ */
+void _print_string(const char *str)
+{
+    while (*str)
+        _putchar(*str++); 
+    
 }
