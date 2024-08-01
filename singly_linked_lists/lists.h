@@ -34,8 +34,6 @@ int _putchar(char c);
 
 /*0*/
 size_t print_list(const list_t *h);
-void _print_number(unsigned int n);
-void _print_string(const char *str);
 
 /*1*/
 size_t list_len(const list_t *h);
@@ -45,7 +43,6 @@ list_t *add_node(list_t **head, const char *str);
 
 /*3*/
 list_t *add_node_end(list_t **head, const char *str);/*add_node*/
-list_t *create_node(const char *str); /*create node*/
 
 /*4*/
 void free_list(list_t *head);

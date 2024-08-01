@@ -1,80 +1,39 @@
-#include "lists.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>  /* Pour la fonction write*/
-#include <stddef.h> /* Pour la fonction size_t*/
+#include "lists.h"
 
 /**
- * print_list - prints all the elements of a list_t list
- * @h: pointer to the head of the list_t list
+ * print_list - Prints all the elements of a list_t list.
+ * @h: A pointer to the head of the list_t list.
  *
- * Description: This function prints each element of a singly linked list
- * of type `list_t`. Each node is printed with its string length and the
- * string itself. If a node's string is NULL, it prints "(nil)" with length 0.
+ * This function traverses a singly linked list of type list_t. For each node,
+ * it prints the length of the string and the string itself. If the string is
+ * NULL, it prints [0] (nil). The function counts the number of nodes in the
+ * list while printing their contents.
  *
- * Return: the number of nodes
+ * Return: The number of nodes in the list.
  *
- * Note: This function traverses the entire list, so it is an O(n) operation,
- * where n is the number of nodes in the list.
+ * Description:
+ * The function starts from the head of the list and iterates through each node.
+ * It checks whether the string pointer in each node is NULL. If it is NULL, 
+ * it prints [0] (nil); otherwise, it prints the length of the string followed
+ * by the string itself. After printing the details of each node, the function
+ * moves to the next node and increments a counter. Once it reaches the end of 
+ * the list (when the next pointer is NULL), it returns the total count of nodes.
  */
 size_t print_list(const list_t *h)
 {
-	size_t count = 0; /* Initialize a counter of the number of nodes */
-	/*int i;   Index for string traversal */
+	size_t count = 0;
 
 	while (h != NULL)
-	{
-		if (h->str == NULL)
-		{
-			_putchar('[');
-			_putchar('0');
-			_putchar(']');
-			_putchar(' ');
-			_putchar('(');
-			_putchar('n');
-			_putchar('i');
-			_putchar('l');
-			_putchar(')');
-			_putchar('\n');
-		}
-		else
-		{
-			_putchar('[');
-			_print_number(h->len);  /* Print length of the string */
-			_putchar(']');
-			_putchar(' ');
-            _print_string(h->str);/*print the string*/
-            _putchar('\n');
-        }
+    {
+        if (h->str == NULL)
+			printf("[0] (nil)\n");
+        else
+			printf("[%u] %s\n", h->len, h->str);
 
 		count++;
 		h = h->next;
-	}
-	return (count);
-}
+    }
 
-/**
- * _print_number - prints an integer as digits
- * @n: the integer to print
- *
- * Description: This function prints an integer digit by digit.
- */
-void _print_number(unsigned int n)
-{
-	if (n / 10 != 0)
-		_print_number(n / 10);
-	_putchar((n % 10) + '0');
-}
- /**
- * _print_string - prints a string character by character
- * @str: the string to print
- *
- * Description: This function prints each character of a string using
- * _putchar.
- */
-void _print_string(const char *str)
-{
-    while (*str)
-        _putchar(*str++); 
-    
+    return count;
 }
