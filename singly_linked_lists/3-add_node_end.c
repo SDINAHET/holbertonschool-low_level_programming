@@ -7,11 +7,11 @@
  * @head: Double pointer to the head of the list_t list.
  * @str: String to be duplicated and added to the new node.
  *
- * Return: Address of the new element, or NULL if it failed.
- *
  * Description: This function adds a new node to the end of a singly linked
  * list. If the list is empty, it makes the new node the head of the list.
  * If the list is not empty, it traverses to the end and appends the new node.
+ *
+ * Return: Address of the new element, or NULL if it failed.
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
