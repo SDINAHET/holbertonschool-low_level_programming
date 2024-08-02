@@ -18,10 +18,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *new_node;  /* Pointer to the new node to be added */
 	list_t *temp;      /* Temporary pointer to traverse the list */
 	char *str_dup;	/*Pointer for the duplicate string*/
-	size_t len;	/*lenght of the string*/
-
-	if (str == NULL) /* Check if str is NULL */
-		return (NULL);
+	unsigned int len = 0;	/*lenght of the string*/
 
 	/* Create and initialize the new node */
 	new_node = malloc(sizeof(list_t));
@@ -34,8 +31,8 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(new_node);  /* Free the node if strdup fails */
 		return (NULL);
 	}
-	len = strlen(str); /* Get the length of the string */
-
+ 	while (str[len] != '\0') /*calcul the lenght of the string manually*/
+                len++;
 	/* Assign duplicated string and its length to the new node */
 	new_node->str = str_dup;
 	new_node->len = len;
@@ -48,9 +45,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	{  /* Traverse to the end of the list */
 		temp = *head;
 		while (temp->next != NULL)
-		{
 			temp = temp->next;
-		}
 		temp->next = new_node;  /* Link the new node at the end of the list */
 	}
 

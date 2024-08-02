@@ -2,7 +2,7 @@
 #define LISTS_H
 
 #include <stdlib.h>
-#include <string.h>
+#include <string.h> /*for strdup*/
 #include <stdio.h>
 #include <stddef.h> /* for size_t*/
 
