@@ -9,14 +9,14 @@
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-    size_t count = 0;
+	size_t count = 0;
 
-    /* Traverse the list and count each node */
-    while (h != NULL)
-    {
-        count++;
-        h = h->next;
-    }
+	/* Traverse the list and count each node */
+	while (h != NULL)
+	{
+		count++;
+		h = h->next;
+	}
 
-    return (count);
+	return (count);
 }
