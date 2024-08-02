@@ -1,6 +1,6 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+#include <stdlib.h> /*gestion de la mémoire dynamique (malloc, free)*/
+#include <string.h> /*manipuler des chaînes de caractères (strdup).*/
+#include <stdio.h> /*pour l'entrée/sortie standard (printf)*/
 #include "lists.h"
 
 /**
