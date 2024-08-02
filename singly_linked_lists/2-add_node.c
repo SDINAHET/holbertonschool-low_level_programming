@@ -10,13 +10,14 @@
  * Return: The address of the new element, or NULL if it failed.
  *
  * Description:
- * This function allocates memory for a new node, duplicates the string provided,
+ * This function allocates memory for a new node, duplicates the string d,
  * and inserts the new node at the beginning of the list. If memory allocation
  * for the node or string duplication fails, the function returns NULL.
- * The new node's `next` pointer is set to the current head of the list, and 
+ * The new node's `next` pointer is set to the current head of the list, and
  * the head is updated to point to the new node.
  */
-list_t *add_node(list_t **head,const char *str)
+list_t *add_node(list_t **head, const char *str)
+
 {
 	list_t *new_node;
 	char *str_dup;
@@ -32,7 +33,7 @@ list_t *add_node(list_t **head,const char *str)
 		free(new_node);
 		return (NULL);
 	}
-	
+
 	new_node->str = str_dup;
 	new_node->len = strlen(str);
 
