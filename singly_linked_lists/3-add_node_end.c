@@ -31,8 +31,8 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(new_node);  /* Free the node if strdup fails */
 		return (NULL);
 	}
- 	while (str[len] != '\0') /*calcul the lenght of the string manually*/
-                len++;
+	while (str[len] != '\0') /*calcul the lenght of the string manually*/
+		len++;
 	/* Assign duplicated string and its length to the new node */
 	new_node->str = str_dup;
 	new_node->len = len;
