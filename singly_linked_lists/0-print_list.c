@@ -5,8 +5,6 @@
  * print_list - Prints all the elements of a list_t list.
  * @h: A pointer to the head of the list_t list.
  *
- * Return: The number of nodes in the list.
- *
  * Description:
  * The function prints each element of a linked list of type list_t.
  * Each element is printed in the format [len] str, where len is the length
@@ -14,17 +12,7 @@
  * should be [0] (nil). After printing all the elements, the function returns
  * the total number of nodes in the list.
  *
- * Example:
- *   Given a list with the following nodes:
- *     1. {str = "Hello", len = 5, next = next_node}
- *     2. {str = "World", len = 5, next = NULL}
- *   Calling print_list on this list will produce:
- *     [5] Hello
- *     [5] World
- *   And return 2, the number of nodes in the list.
- *
- * Note:
- * - The function uses printf for printing.
+ * Return: The number of nodes in the list.
  */
 size_t print_list(const list_t *h)
 
@@ -41,8 +29,8 @@ size_t print_list(const list_t *h)
 		{
 			printf("[%u] %s\n", h->len, h->str);
 		}
-		count++;
 		h = h->next;
+		count++;
 	}
 
 	return (count);
