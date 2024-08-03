@@ -14,6 +14,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	/* Traverse the list until the index is reached or the end of the list */
 	while (current != NULL)
+	/*current = pointer to iterate the list head to tail*/
 	{
 		if (i == index)
 			return (current);  /* Node found at the specified index */

@@ -17,9 +17,9 @@
  */
 typedef struct dlistint_s
 {
-	int n;
-	struct dlistint_s *prev;
-	struct dlistint_s *next;
+	int n; /*Data stored in the node*/
+	struct dlistint_s *prev; /*pointer to the previous node*/
+	struct dlistint_s *next; /*pointer to the next node*/
 } dlistint_t;
 
 /* Function prototypes */

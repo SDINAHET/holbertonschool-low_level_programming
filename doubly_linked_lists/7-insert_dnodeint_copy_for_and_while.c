@@ -40,13 +40,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	/*}*/
 
 	 /* Traverse the list to find the position */
-	current = *h;
-	i = 0;
-	while (current != NULL && i < idx - 1)
-	{
-		current = current->next;
-		i++;
-	}
+    current = *h;
+    i = 0;
+    while (current != NULL && i < idx - 1)
+    {
+        current = current->next;
+        i++;
+    }
 
 	/* If the index is out of range */
 	if (current == NULL)
