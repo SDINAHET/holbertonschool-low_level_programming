@@ -17,6 +17,13 @@ void print_error(const char *message, int exit_code)
 	exit(exit_code);
 }
 
+/**
+ * main - Copies the content of one file to another.
+ * @argc: Number of command-line arguments.
+ * @argv: Array of command-line arguments.
+ *
+ * Return: 0 on success, or an exit code on failure.
+ */
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, r, w;
@@ -32,7 +39,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
 	file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, file_perm);
 	if (file_to == -1)
 	{
@@ -40,7 +46,6 @@ int main(int argc, char *argv[])
 		close(file_from);
 		exit(99);
 	}
-
 	while ((r = read(file_from, buffer, sizeof(buffer))) > 0)
 	{
 		w = write(file_to, buffer, r);
@@ -52,7 +57,6 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-
 	if (r == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -60,18 +64,15 @@ int main(int argc, char *argv[])
 		close(file_to);
 		exit(98);
 	}
-
 	if (close(file_from) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
-
 	if (close(file_to) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
-
 	return (0);
 }
