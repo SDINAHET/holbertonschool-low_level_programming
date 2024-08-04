@@ -6,12 +6,14 @@
 #include <string.h>
 #include <sys/stat.h>
 
-#define BUFFER_SIZE 1024
+/* Function prototypes */
+void print_error(const char *message, const char *file, int exit_code);
+void copy_file(int file_from, int file_to);
 
 /**
- * print_error - Prints an error message to standard error and exits.
+ * print_error - Prints error messages to standard error.
  * @message: Error message to print.
- * @file: Filename associated with the error.
+ * @file: The file name associated with the error.
  * @exit_code: Exit code to use.
  */
 void print_error(const char *message, const char *file, int exit_code)
@@ -24,6 +26,26 @@ void print_error(const char *message, const char *file, int exit_code)
 }
 
 /**
+ * copy_file - Copies content from one file descriptor to another.
+ * @file_from: Source file descriptor.
+ * @file_to: Destination file descriptor.
+ */
+void copy_file(int file_from, int file_to)
+{
+	char buffer[1024];
+	ssize_t r, w;
+
+	while ((r = read(file_from, buffer, sizeof(buffer))) > 0)
+	{
+		w = write(file_to, buffer, r);
+		if (w != r)
+			print_error("Error: Can't write to", NULL, 99);
+	}
+	if (r == -1)
+		print_error("Error: Can't read from", NULL, 98);
+}
+
+/**
  * main - Copies the content of one file to another.
  * @argc: Number of command-line arguments.
  * @argv: Array of command-line arguments.
@@ -33,43 +55,26 @@ void print_error(const char *message, const char *file, int exit_code)
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
-	ssize_t bytes_read, bytes_written;
-	char buffer[BUFFER_SIZE];
 	mode_t file_perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 		print_error("Usage: cp file_from file_to", NULL, 97);
+
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 		print_error("Error: Can't read from file", argv[1], 98);
+
 	file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, file_perm);
 	if (file_to == -1)
 	{
 		close(file_from);
 		print_error("Error: Can't write to", argv[2], 99);
 	}
-	while ((bytes_read = read(file_from, buffer, sizeof(buffer))) > 0)
-	{
-		bytes_written = write(file_to, buffer, bytes_read);
-		if (bytes_written != bytes_read)
-		{
-			close(file_from);
-			close(file_to);
-			print_error("Error: Can't write to", argv[2], 99);
-		}
-	}
-	if (bytes_read == -1)
-	{
-		close(file_from);
-		close(file_to);
-		print_error("Error: Can't read from file", argv[1], 98);
-	}
 
-	if (close(file_from) == -1)
-		print_error("Error: Can't close fd", argv[1], 100);
+	copy_file(file_from, file_to);
 
-	if (close(file_to) == -1)
-		print_error("Error: Can't close fd", argv[2], 100);
+	if (close(file_from) == -1 || close(file_to) == -1)
+		print_error("Error: Can't close fd", NULL, 100);
 
 	return (0);
 }
