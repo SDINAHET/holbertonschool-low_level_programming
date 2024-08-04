@@ -34,14 +34,17 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		error_exit("Usage: cp file_from file_to", 97);
 	fd_from = open(argv[1], O_RDONLY);
+
 	if (fd_from == -1)
 		error_exit("Error: Can't read from file", 98);
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, perms);
+
 	if (fd_to == -1)
 	{
 		close(fd_from);
 		error_exit("Error: Can't write to file", 99);
 	}
+
 	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		bytes_written = write(fd_to, buffer, bytes_read);
