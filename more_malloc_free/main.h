@@ -28,5 +28,6 @@ int _isdigit(int c);
 int _strlen(char *s);
 void print_error(char *r);
 char *big_multiply(char *s1, char *s2);
+void cleanup(char *r);
 
 #endif /* MAIN_H */
