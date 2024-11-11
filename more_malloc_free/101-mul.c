@@ -64,8 +64,8 @@ char *big_multiply(char *s1, char *s2)
 	l2 = _strlen(s2);
 	x = l1 + l2;
 
-	r = (char *)malloc(x); /* Use malloc instead of calloc */
-	/* r = (char *)calloc(x, sizeof(char));   Use calloc for memory init */
+	/*r = (char *)malloc(x);  Use malloc instead of calloc */
+	r = (char *)calloc(x, sizeof(char));  /* Use calloc for memory init */
 	if (!r)
 		print_error(r);
 
