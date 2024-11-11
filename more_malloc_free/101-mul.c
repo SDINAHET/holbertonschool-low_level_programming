@@ -59,40 +59,34 @@ void print_error(void)
 char *big_multiply(char *s1, char *s2)
 {
 	char *r;
-	int l1, l2, a, b, c, x;
+	int l1, l2, a, b, c, i, j;
 
 	l1 = _strlen(s1);
 	l2 = _strlen(s2);
-	x = l1 + l2;
-
-	/*r = (char *)malloc(x);  Use malloc instead of calloc */
-	r = (char *)calloc(x, sizeof(char));  /* Use calloc for memory init */
+	r = (char *)calloc(l1 + l2, sizeof(char)); /* Allocate memory for result */
 	if (!r)
 		print_error();
 
-	/* Initialize result array with 0's */
-	for (a = 0; a < x; a++)
-		r[a] = 0;
-
-	for (l1 = l1 - 1; l1 >= 0; l1--)
+	/* Perform multiplication */
+	for (i = l1 - 1; i >= 0; i--)
 	{
-		if (!_isdigit(s1[l1]))
+		if (!_isdigit(s1[i])) /* Check if the character is a digit */
 			print_error();
-		a = s1[l1] - '0';
+		a = s1[i] - '0'; /* Convert character to digit */
 		c = 0;
 
-		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
+		for (j = l2 - 1; j >= 0; j--)
 		{
-			if (!_isdigit(s2[l2]))
+			if (!_isdigit(s2[j])) /* Check if the character is a digit */
 				print_error();
-			b = s2[l2] - '0';
+			b = s2[j] - '0'; /* Convert character to digit */
 
-			c += r[l1 + l2 + 1] + (a * b);
-			r[l1 + l2 + 1] = c % 10;
-			c /= 10;
+			c += r[i + j + 1] + (a * b); /* Multiply and add to current position */
+			r[i + j + 1] = c % 10;		 /* Store the single digit result */
+			c /= 10;					 /* Carry over */
 		}
 		if (c)
-			r[l1 + l2 + 1] += c;
+			r[i + j + 1] += c; /* Add carry to the next position */
 	}
 
 	return (r);
