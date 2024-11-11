@@ -26,7 +26,8 @@ void *new_ptr;
 /*101-mul.c*/
 int _isdigit(int c);
 int _strlen(char *s);
-void print_error(char *r);
+/*void print_error(char *r);*/
+void print_error(void);
 char *big_multiply(char *s1, char *s2);
 void cleanup(char *r);
 

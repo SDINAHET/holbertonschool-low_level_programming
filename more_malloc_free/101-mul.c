@@ -30,15 +30,16 @@ int _strlen(char *s)
 
 /**
  * print_error - Frees the memory and prints an error message followed by exit.
- * @r: Pointer to the dynamically allocated memory to be freed.
  *
  * This function prints the word "Error" to the standard output,
  * followed by a new line, and then exits the program with a status of 98.
  */
-void print_error(char *r)
+/*void print_error(char *r)*/
+void print_error(void)
 {
-	if (r)  /* Check if r is non-NULL before freeing */
-		free(r);  /* Free the dynamically allocated memory */
+	/*if (r)   Check if r is non-NULL before freeing */
+	/*	free(r);   Free the dynamically allocated memory */
+	/*@r: Pointer to the dynamically allocated memory to be freed.*/
 	_putchar('E');
 	_putchar('r');
 	_putchar('r');
@@ -67,7 +68,7 @@ char *big_multiply(char *s1, char *s2)
 	/*r = (char *)malloc(x);  Use malloc instead of calloc */
 	r = (char *)calloc(x, sizeof(char));  /* Use calloc for memory init */
 	if (!r)
-		print_error(r);
+		print_error();
 
 	/* Initialize result array with 0's */
 	for (a = 0; a < x; a++)
@@ -76,14 +77,14 @@ char *big_multiply(char *s1, char *s2)
 	for (l1 = l1 - 1; l1 >= 0; l1--)
 	{
 		if (!_isdigit(s1[l1]))
-			print_error(r);
+			print_error();
 		a = s1[l1] - '0';
 		c = 0;
 
 		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
 		{
 			if (!_isdigit(s2[l2]))
-				print_error(r);
+				print_error();
 			b = s2[l2] - '0';
 
 			c += r[l1 + l2 + 1] + (a * b);
@@ -110,7 +111,7 @@ int main(int argc, char **argv)
 	int a, c, x;
 
 	if (argc != 3)
-		print_error(NULL);
+		print_error();
 
 	x = _strlen(argv[1]) + _strlen(argv[2]);
 	r = big_multiply(argv[1], argv[2]);
