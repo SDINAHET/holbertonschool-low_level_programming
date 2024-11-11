@@ -21,6 +21,9 @@ int _putchar(char c);
 
 /* 100-realloc.c */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void *malloc_new_block(unsigned int new_size);
+void copy_data(unsigned char *old_data, unsigned char *new_data,
+		unsigned int size);
 void *new_ptr;
 
 /*101-mul.c*/
