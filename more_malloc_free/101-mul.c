@@ -37,7 +37,8 @@ int _strlen(char *s)
  */
 void print_error(char *r)
 {
-	free(r);
+	if (r)  /* Check if r is non-NULL before freeing */
+		free(r);  /* Free the dynamically allocated memory */
 	_putchar('E');
 	_putchar('r');
 	_putchar('r');
@@ -64,6 +65,7 @@ char *big_multiply(char *s1, char *s2)
 	x = l1 + l2;
 
 	r = (char *)malloc(x); /* Use malloc instead of calloc */
+	/* r = (char *)calloc(x, sizeof(char));   Use calloc for memory init */
 	if (!r)
 		print_error(r);
 
@@ -95,14 +97,6 @@ char *big_multiply(char *s1, char *s2)
 	return (r);
 }
 
-/**
- * cleanup - Frees allocated memory to prevent memory leaks
- * @r: Pointer to the memory to be freed
- */
-void cleanup(char *r)
-{
-	free(r); /* Free dynamically allocated memory */
-}
 
 /**
  * main - multiply two big number strings
@@ -135,7 +129,7 @@ int main(int argc, char **argv)
 	if (!a)
 		_putchar('0');
 	_putchar('\n');
-	/*free(r);*/
-	cleanup(r); /* Ensure we free the allocated memory*/
+	free(r);
+	/*cleanup(r);  Ensure we free the allocated memory*/
 	return (0);
 }
