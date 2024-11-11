@@ -97,7 +97,6 @@ char *big_multiply(char *s1, char *s2)
 	return (r);
 }
 
-
 /**
  * main - multiply two big number strings
  * @argc: the number of arguments
@@ -129,6 +128,7 @@ int main(int argc, char **argv)
 	if (!a)
 		_putchar('0');
 	_putchar('\n');
+
 	free(r);
 	/*cleanup(r);  Ensure we free the allocated memory*/
 	return (0);
